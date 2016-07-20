@@ -416,7 +416,7 @@ namespace WMS.Controllers
                     }
                     emp.EmpNo = emp.EmpNo.ToUpper();
                     emp.Deleted = false;
-                    db.Entry(emp).State = EntityState.Modified;
+                    db.Entry(emp).State = System.Data.Entity.EntityState.Modified;
                    
                     db.SaveChanges();
                     int _userID = Convert.ToInt32(Session["LogedUserID"].ToString());

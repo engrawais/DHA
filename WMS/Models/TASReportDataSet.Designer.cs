@@ -36,6 +36,8 @@ namespace WMS.Models {
         
         private ViewJobCardAppDataTable tableViewJobCardApp;
         
+        private ViewMLvConsumedDataTable tableViewMLvConsumed;
+        
         private FlexyMonthPerDataTable tableFlexyMonthPer;
         
         private EmpSummaryDataTable tableEmpSummary;
@@ -85,6 +87,9 @@ namespace WMS.Models {
                 }
                 if ((ds.Tables["ViewJobCardApp"] != null)) {
                     base.Tables.Add(new ViewJobCardAppDataTable(ds.Tables["ViewJobCardApp"]));
+                }
+                if ((ds.Tables["ViewMLvConsumed"] != null)) {
+                    base.Tables.Add(new ViewMLvConsumedDataTable(ds.Tables["ViewMLvConsumed"]));
                 }
                 if ((ds.Tables["FlexyMonthPer"] != null)) {
                     base.Tables.Add(new FlexyMonthPerDataTable(ds.Tables["FlexyMonthPer"]));
@@ -167,6 +172,16 @@ namespace WMS.Models {
         public ViewJobCardAppDataTable ViewJobCardApp {
             get {
                 return this.tableViewJobCardApp;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ViewMLvConsumedDataTable ViewMLvConsumed {
+            get {
+                return this.tableViewMLvConsumed;
             }
         }
         
@@ -275,6 +290,9 @@ namespace WMS.Models {
                 if ((ds.Tables["ViewJobCardApp"] != null)) {
                     base.Tables.Add(new ViewJobCardAppDataTable(ds.Tables["ViewJobCardApp"]));
                 }
+                if ((ds.Tables["ViewMLvConsumed"] != null)) {
+                    base.Tables.Add(new ViewMLvConsumedDataTable(ds.Tables["ViewMLvConsumed"]));
+                }
                 if ((ds.Tables["FlexyMonthPer"] != null)) {
                     base.Tables.Add(new FlexyMonthPerDataTable(ds.Tables["FlexyMonthPer"]));
                 }
@@ -350,6 +368,12 @@ namespace WMS.Models {
                     this.tableViewJobCardApp.InitVars();
                 }
             }
+            this.tableViewMLvConsumed = ((ViewMLvConsumedDataTable)(base.Tables["ViewMLvConsumed"]));
+            if ((initTable == true)) {
+                if ((this.tableViewMLvConsumed != null)) {
+                    this.tableViewMLvConsumed.InitVars();
+                }
+            }
             this.tableFlexyMonthPer = ((FlexyMonthPerDataTable)(base.Tables["FlexyMonthPer"]));
             if ((initTable == true)) {
                 if ((this.tableFlexyMonthPer != null)) {
@@ -384,6 +408,8 @@ namespace WMS.Models {
             base.Tables.Add(this.tableViewLvApplication);
             this.tableViewJobCardApp = new ViewJobCardAppDataTable();
             base.Tables.Add(this.tableViewJobCardApp);
+            this.tableViewMLvConsumed = new ViewMLvConsumedDataTable();
+            base.Tables.Add(this.tableViewMLvConsumed);
             this.tableFlexyMonthPer = new FlexyMonthPerDataTable();
             base.Tables.Add(this.tableFlexyMonthPer);
             this.tableEmpSummary = new EmpSummaryDataTable();
@@ -423,6 +449,12 @@ namespace WMS.Models {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeViewJobCardApp() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeViewMLvConsumed() {
             return false;
         }
         
@@ -510,6 +542,9 @@ namespace WMS.Models {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ViewJobCardAppRowChangeEventHandler(object sender, ViewJobCardAppRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ViewMLvConsumedRowChangeEventHandler(object sender, ViewMLvConsumedRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void FlexyMonthPerRowChangeEventHandler(object sender, FlexyMonthPerRowChangeEvent e);
@@ -5338,6 +5373,797 @@ namespace WMS.Models {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ViewJobCardAppDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ViewMLvConsumedDataTable : global::System.Data.TypedTableBase<ViewMLvConsumedRow> {
+            
+            private global::System.Data.DataColumn columnLvDesc;
+            
+            private global::System.Data.DataColumn columnEmpID;
+            
+            private global::System.Data.DataColumn columnEmpLvTypeYear;
+            
+            private global::System.Data.DataColumn columnLvYear;
+            
+            private global::System.Data.DataColumn columnJanConsumed;
+            
+            private global::System.Data.DataColumn columnFebConsumed;
+            
+            private global::System.Data.DataColumn columnMarchConsumed;
+            
+            private global::System.Data.DataColumn columnAprConsumed;
+            
+            private global::System.Data.DataColumn columnMayConsumed;
+            
+            private global::System.Data.DataColumn columnJuneConsumed;
+            
+            private global::System.Data.DataColumn columnJulyConsumed;
+            
+            private global::System.Data.DataColumn columnAugustConsumed;
+            
+            private global::System.Data.DataColumn columnSepConsumed;
+            
+            private global::System.Data.DataColumn columnOctConsumed;
+            
+            private global::System.Data.DataColumn columnNovConsumed;
+            
+            private global::System.Data.DataColumn columnDecConsumed;
+            
+            private global::System.Data.DataColumn columnTotalForYear;
+            
+            private global::System.Data.DataColumn columnYearRemaining;
+            
+            private global::System.Data.DataColumn columnGrandTotal;
+            
+            private global::System.Data.DataColumn columnGrandTotalRemaining;
+            
+            private global::System.Data.DataColumn columnDeptName;
+            
+            private global::System.Data.DataColumn columnSectionName;
+            
+            private global::System.Data.DataColumn columnDesignationName;
+            
+            private global::System.Data.DataColumn columnEmpNo;
+            
+            private global::System.Data.DataColumn columnEmpName;
+            
+            private global::System.Data.DataColumn columnDeptID;
+            
+            private global::System.Data.DataColumn columnShiftName;
+            
+            private global::System.Data.DataColumn columnLocName;
+            
+            private global::System.Data.DataColumn columnTypeName;
+            
+            private global::System.Data.DataColumn columnStatus;
+            
+            private global::System.Data.DataColumn columnSecID;
+            
+            private global::System.Data.DataColumn columnTypeID;
+            
+            private global::System.Data.DataColumn columnLocID;
+            
+            private global::System.Data.DataColumn columnShiftID;
+            
+            private global::System.Data.DataColumn columnDesigID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedDataTable() {
+                this.TableName = "ViewMLvConsumed";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ViewMLvConsumedDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ViewMLvConsumedDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LvDescColumn {
+                get {
+                    return this.columnLvDesc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmpIDColumn {
+                get {
+                    return this.columnEmpID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmpLvTypeYearColumn {
+                get {
+                    return this.columnEmpLvTypeYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LvYearColumn {
+                get {
+                    return this.columnLvYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JanConsumedColumn {
+                get {
+                    return this.columnJanConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FebConsumedColumn {
+                get {
+                    return this.columnFebConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MarchConsumedColumn {
+                get {
+                    return this.columnMarchConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AprConsumedColumn {
+                get {
+                    return this.columnAprConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MayConsumedColumn {
+                get {
+                    return this.columnMayConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JuneConsumedColumn {
+                get {
+                    return this.columnJuneConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JulyConsumedColumn {
+                get {
+                    return this.columnJulyConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AugustConsumedColumn {
+                get {
+                    return this.columnAugustConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SepConsumedColumn {
+                get {
+                    return this.columnSepConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OctConsumedColumn {
+                get {
+                    return this.columnOctConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NovConsumedColumn {
+                get {
+                    return this.columnNovConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DecConsumedColumn {
+                get {
+                    return this.columnDecConsumed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalForYearColumn {
+                get {
+                    return this.columnTotalForYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn YearRemainingColumn {
+                get {
+                    return this.columnYearRemaining;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GrandTotalColumn {
+                get {
+                    return this.columnGrandTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GrandTotalRemainingColumn {
+                get {
+                    return this.columnGrandTotalRemaining;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DeptNameColumn {
+                get {
+                    return this.columnDeptName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SectionNameColumn {
+                get {
+                    return this.columnSectionName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DesignationNameColumn {
+                get {
+                    return this.columnDesignationName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmpNoColumn {
+                get {
+                    return this.columnEmpNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmpNameColumn {
+                get {
+                    return this.columnEmpName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DeptIDColumn {
+                get {
+                    return this.columnDeptID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ShiftNameColumn {
+                get {
+                    return this.columnShiftName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LocNameColumn {
+                get {
+                    return this.columnLocName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TypeNameColumn {
+                get {
+                    return this.columnTypeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SecIDColumn {
+                get {
+                    return this.columnSecID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TypeIDColumn {
+                get {
+                    return this.columnTypeID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LocIDColumn {
+                get {
+                    return this.columnLocID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ShiftIDColumn {
+                get {
+                    return this.columnShiftID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DesigIDColumn {
+                get {
+                    return this.columnDesigID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedRow this[int index] {
+                get {
+                    return ((ViewMLvConsumedRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewMLvConsumedRowChangeEventHandler ViewMLvConsumedRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewMLvConsumedRowChangeEventHandler ViewMLvConsumedRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewMLvConsumedRowChangeEventHandler ViewMLvConsumedRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewMLvConsumedRowChangeEventHandler ViewMLvConsumedRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddViewMLvConsumedRow(ViewMLvConsumedRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedRow AddViewMLvConsumedRow(
+                        string LvDesc, 
+                        int EmpID, 
+                        string EmpLvTypeYear, 
+                        string LvYear, 
+                        double JanConsumed, 
+                        double FebConsumed, 
+                        double MarchConsumed, 
+                        double AprConsumed, 
+                        double MayConsumed, 
+                        double JuneConsumed, 
+                        double JulyConsumed, 
+                        double AugustConsumed, 
+                        double SepConsumed, 
+                        double OctConsumed, 
+                        double NovConsumed, 
+                        double DecConsumed, 
+                        double TotalForYear, 
+                        double YearRemaining, 
+                        double GrandTotal, 
+                        double GrandTotalRemaining, 
+                        string DeptName, 
+                        string SectionName, 
+                        string DesignationName, 
+                        string EmpNo, 
+                        string EmpName, 
+                        short DeptID, 
+                        string ShiftName, 
+                        string LocName, 
+                        string TypeName, 
+                        bool Status, 
+                        short SecID, 
+                        byte TypeID, 
+                        short LocID, 
+                        byte ShiftID, 
+                        int DesigID) {
+                ViewMLvConsumedRow rowViewMLvConsumedRow = ((ViewMLvConsumedRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        LvDesc,
+                        EmpID,
+                        EmpLvTypeYear,
+                        LvYear,
+                        JanConsumed,
+                        FebConsumed,
+                        MarchConsumed,
+                        AprConsumed,
+                        MayConsumed,
+                        JuneConsumed,
+                        JulyConsumed,
+                        AugustConsumed,
+                        SepConsumed,
+                        OctConsumed,
+                        NovConsumed,
+                        DecConsumed,
+                        TotalForYear,
+                        YearRemaining,
+                        GrandTotal,
+                        GrandTotalRemaining,
+                        DeptName,
+                        SectionName,
+                        DesignationName,
+                        EmpNo,
+                        EmpName,
+                        DeptID,
+                        ShiftName,
+                        LocName,
+                        TypeName,
+                        Status,
+                        SecID,
+                        TypeID,
+                        LocID,
+                        ShiftID,
+                        DesigID};
+                rowViewMLvConsumedRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowViewMLvConsumedRow);
+                return rowViewMLvConsumedRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedRow FindByEmpLvTypeYear(string EmpLvTypeYear) {
+                return ((ViewMLvConsumedRow)(this.Rows.Find(new object[] {
+                            EmpLvTypeYear})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ViewMLvConsumedDataTable cln = ((ViewMLvConsumedDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ViewMLvConsumedDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnLvDesc = base.Columns["LvDesc"];
+                this.columnEmpID = base.Columns["EmpID"];
+                this.columnEmpLvTypeYear = base.Columns["EmpLvTypeYear"];
+                this.columnLvYear = base.Columns["LvYear"];
+                this.columnJanConsumed = base.Columns["JanConsumed"];
+                this.columnFebConsumed = base.Columns["FebConsumed"];
+                this.columnMarchConsumed = base.Columns["MarchConsumed"];
+                this.columnAprConsumed = base.Columns["AprConsumed"];
+                this.columnMayConsumed = base.Columns["MayConsumed"];
+                this.columnJuneConsumed = base.Columns["JuneConsumed"];
+                this.columnJulyConsumed = base.Columns["JulyConsumed"];
+                this.columnAugustConsumed = base.Columns["AugustConsumed"];
+                this.columnSepConsumed = base.Columns["SepConsumed"];
+                this.columnOctConsumed = base.Columns["OctConsumed"];
+                this.columnNovConsumed = base.Columns["NovConsumed"];
+                this.columnDecConsumed = base.Columns["DecConsumed"];
+                this.columnTotalForYear = base.Columns["TotalForYear"];
+                this.columnYearRemaining = base.Columns["YearRemaining"];
+                this.columnGrandTotal = base.Columns["GrandTotal"];
+                this.columnGrandTotalRemaining = base.Columns["GrandTotalRemaining"];
+                this.columnDeptName = base.Columns["DeptName"];
+                this.columnSectionName = base.Columns["SectionName"];
+                this.columnDesignationName = base.Columns["DesignationName"];
+                this.columnEmpNo = base.Columns["EmpNo"];
+                this.columnEmpName = base.Columns["EmpName"];
+                this.columnDeptID = base.Columns["DeptID"];
+                this.columnShiftName = base.Columns["ShiftName"];
+                this.columnLocName = base.Columns["LocName"];
+                this.columnTypeName = base.Columns["TypeName"];
+                this.columnStatus = base.Columns["Status"];
+                this.columnSecID = base.Columns["SecID"];
+                this.columnTypeID = base.Columns["TypeID"];
+                this.columnLocID = base.Columns["LocID"];
+                this.columnShiftID = base.Columns["ShiftID"];
+                this.columnDesigID = base.Columns["DesigID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnLvDesc = new global::System.Data.DataColumn("LvDesc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLvDesc);
+                this.columnEmpID = new global::System.Data.DataColumn("EmpID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpID);
+                this.columnEmpLvTypeYear = new global::System.Data.DataColumn("EmpLvTypeYear", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpLvTypeYear);
+                this.columnLvYear = new global::System.Data.DataColumn("LvYear", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLvYear);
+                this.columnJanConsumed = new global::System.Data.DataColumn("JanConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJanConsumed);
+                this.columnFebConsumed = new global::System.Data.DataColumn("FebConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFebConsumed);
+                this.columnMarchConsumed = new global::System.Data.DataColumn("MarchConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMarchConsumed);
+                this.columnAprConsumed = new global::System.Data.DataColumn("AprConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAprConsumed);
+                this.columnMayConsumed = new global::System.Data.DataColumn("MayConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMayConsumed);
+                this.columnJuneConsumed = new global::System.Data.DataColumn("JuneConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJuneConsumed);
+                this.columnJulyConsumed = new global::System.Data.DataColumn("JulyConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJulyConsumed);
+                this.columnAugustConsumed = new global::System.Data.DataColumn("AugustConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAugustConsumed);
+                this.columnSepConsumed = new global::System.Data.DataColumn("SepConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSepConsumed);
+                this.columnOctConsumed = new global::System.Data.DataColumn("OctConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOctConsumed);
+                this.columnNovConsumed = new global::System.Data.DataColumn("NovConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNovConsumed);
+                this.columnDecConsumed = new global::System.Data.DataColumn("DecConsumed", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDecConsumed);
+                this.columnTotalForYear = new global::System.Data.DataColumn("TotalForYear", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalForYear);
+                this.columnYearRemaining = new global::System.Data.DataColumn("YearRemaining", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYearRemaining);
+                this.columnGrandTotal = new global::System.Data.DataColumn("GrandTotal", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrandTotal);
+                this.columnGrandTotalRemaining = new global::System.Data.DataColumn("GrandTotalRemaining", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrandTotalRemaining);
+                this.columnDeptName = new global::System.Data.DataColumn("DeptName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeptName);
+                this.columnSectionName = new global::System.Data.DataColumn("SectionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSectionName);
+                this.columnDesignationName = new global::System.Data.DataColumn("DesignationName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDesignationName);
+                this.columnEmpNo = new global::System.Data.DataColumn("EmpNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpNo);
+                this.columnEmpName = new global::System.Data.DataColumn("EmpName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpName);
+                this.columnDeptID = new global::System.Data.DataColumn("DeptID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeptID);
+                this.columnShiftName = new global::System.Data.DataColumn("ShiftName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShiftName);
+                this.columnLocName = new global::System.Data.DataColumn("LocName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocName);
+                this.columnTypeName = new global::System.Data.DataColumn("TypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTypeName);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.columnSecID = new global::System.Data.DataColumn("SecID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSecID);
+                this.columnTypeID = new global::System.Data.DataColumn("TypeID", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTypeID);
+                this.columnLocID = new global::System.Data.DataColumn("LocID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocID);
+                this.columnShiftID = new global::System.Data.DataColumn("ShiftID", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShiftID);
+                this.columnDesigID = new global::System.Data.DataColumn("DesigID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDesigID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnEmpLvTypeYear}, true));
+                this.columnLvDesc.AllowDBNull = false;
+                this.columnLvDesc.MaxLength = 30;
+                this.columnEmpID.AllowDBNull = false;
+                this.columnEmpLvTypeYear.AllowDBNull = false;
+                this.columnEmpLvTypeYear.Unique = true;
+                this.columnEmpLvTypeYear.MaxLength = 15;
+                this.columnLvYear.MaxLength = 4;
+                this.columnDeptName.AllowDBNull = false;
+                this.columnDeptName.MaxLength = 100;
+                this.columnSectionName.AllowDBNull = false;
+                this.columnSectionName.MaxLength = 50;
+                this.columnDesignationName.AllowDBNull = false;
+                this.columnDesignationName.MaxLength = 200;
+                this.columnEmpNo.AllowDBNull = false;
+                this.columnEmpNo.MaxLength = 50;
+                this.columnEmpName.AllowDBNull = false;
+                this.columnEmpName.MaxLength = 50;
+                this.columnDeptID.AllowDBNull = false;
+                this.columnShiftName.AllowDBNull = false;
+                this.columnShiftName.MaxLength = 50;
+                this.columnLocName.AllowDBNull = false;
+                this.columnLocName.MaxLength = 30;
+                this.columnTypeName.AllowDBNull = false;
+                this.columnTypeName.MaxLength = 30;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedRow NewViewMLvConsumedRow() {
+                return ((ViewMLvConsumedRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ViewMLvConsumedRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ViewMLvConsumedRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ViewMLvConsumedRowChanged != null)) {
+                    this.ViewMLvConsumedRowChanged(this, new ViewMLvConsumedRowChangeEvent(((ViewMLvConsumedRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ViewMLvConsumedRowChanging != null)) {
+                    this.ViewMLvConsumedRowChanging(this, new ViewMLvConsumedRowChangeEvent(((ViewMLvConsumedRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ViewMLvConsumedRowDeleted != null)) {
+                    this.ViewMLvConsumedRowDeleted(this, new ViewMLvConsumedRowChangeEvent(((ViewMLvConsumedRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ViewMLvConsumedRowDeleting != null)) {
+                    this.ViewMLvConsumedRowDeleting(this, new ViewMLvConsumedRowChangeEvent(((ViewMLvConsumedRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveViewMLvConsumedRow(ViewMLvConsumedRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                TASReportDataSet ds = new TASReportDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ViewMLvConsumedDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -12682,6 +13508,797 @@ namespace WMS.Models {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class ViewMLvConsumedRow : global::System.Data.DataRow {
+            
+            private ViewMLvConsumedDataTable tableViewMLvConsumed;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ViewMLvConsumedRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableViewMLvConsumed = ((ViewMLvConsumedDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LvDesc {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.LvDescColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.LvDescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int EmpID {
+                get {
+                    return ((int)(this[this.tableViewMLvConsumed.EmpIDColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.EmpIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EmpLvTypeYear {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.EmpLvTypeYearColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.EmpLvTypeYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LvYear {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewMLvConsumed.LvYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LvYear\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.LvYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double JanConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.JanConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'JanConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.JanConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double FebConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.FebConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FebConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.FebConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double MarchConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.MarchConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MarchConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.MarchConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double AprConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.AprConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AprConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.AprConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double MayConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.MayConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MayConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.MayConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double JuneConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.JuneConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'JuneConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.JuneConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double JulyConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.JulyConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'JulyConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.JulyConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double AugustConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.AugustConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AugustConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.AugustConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SepConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.SepConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SepConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.SepConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double OctConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.OctConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OctConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.OctConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double NovConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.NovConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NovConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.NovConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double DecConsumed {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.DecConsumedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DecConsumed\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.DecConsumedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TotalForYear {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.TotalForYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalForYear\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.TotalForYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double YearRemaining {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.YearRemainingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'YearRemaining\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.YearRemainingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double GrandTotal {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.GrandTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrandTotal\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.GrandTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double GrandTotalRemaining {
+                get {
+                    try {
+                        return ((double)(this[this.tableViewMLvConsumed.GrandTotalRemainingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrandTotalRemaining\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.GrandTotalRemainingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DeptName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.DeptNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.DeptNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SectionName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.SectionNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.SectionNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DesignationName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.DesignationNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.DesignationNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EmpNo {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.EmpNoColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.EmpNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EmpName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.EmpNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.EmpNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short DeptID {
+                get {
+                    return ((short)(this[this.tableViewMLvConsumed.DeptIDColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.DeptIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ShiftName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.ShiftNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.ShiftNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LocName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.LocNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.LocNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TypeName {
+                get {
+                    return ((string)(this[this.tableViewMLvConsumed.TypeNameColumn]));
+                }
+                set {
+                    this[this.tableViewMLvConsumed.TypeNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Status {
+                get {
+                    try {
+                        return ((bool)(this[this.tableViewMLvConsumed.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short SecID {
+                get {
+                    try {
+                        return ((short)(this[this.tableViewMLvConsumed.SecIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SecID\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.SecIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte TypeID {
+                get {
+                    try {
+                        return ((byte)(this[this.tableViewMLvConsumed.TypeIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TypeID\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.TypeIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short LocID {
+                get {
+                    try {
+                        return ((short)(this[this.tableViewMLvConsumed.LocIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LocID\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.LocIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte ShiftID {
+                get {
+                    try {
+                        return ((byte)(this[this.tableViewMLvConsumed.ShiftIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ShiftID\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.ShiftIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DesigID {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewMLvConsumed.DesigIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DesigID\' in table \'ViewMLvConsumed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewMLvConsumed.DesigIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLvYearNull() {
+                return this.IsNull(this.tableViewMLvConsumed.LvYearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLvYearNull() {
+                this[this.tableViewMLvConsumed.LvYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJanConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.JanConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJanConsumedNull() {
+                this[this.tableViewMLvConsumed.JanConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFebConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.FebConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFebConsumedNull() {
+                this[this.tableViewMLvConsumed.FebConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMarchConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.MarchConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMarchConsumedNull() {
+                this[this.tableViewMLvConsumed.MarchConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAprConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.AprConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAprConsumedNull() {
+                this[this.tableViewMLvConsumed.AprConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMayConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.MayConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMayConsumedNull() {
+                this[this.tableViewMLvConsumed.MayConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJuneConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.JuneConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJuneConsumedNull() {
+                this[this.tableViewMLvConsumed.JuneConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJulyConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.JulyConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJulyConsumedNull() {
+                this[this.tableViewMLvConsumed.JulyConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAugustConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.AugustConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAugustConsumedNull() {
+                this[this.tableViewMLvConsumed.AugustConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSepConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.SepConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSepConsumedNull() {
+                this[this.tableViewMLvConsumed.SepConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOctConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.OctConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOctConsumedNull() {
+                this[this.tableViewMLvConsumed.OctConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNovConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.NovConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNovConsumedNull() {
+                this[this.tableViewMLvConsumed.NovConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDecConsumedNull() {
+                return this.IsNull(this.tableViewMLvConsumed.DecConsumedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDecConsumedNull() {
+                this[this.tableViewMLvConsumed.DecConsumedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalForYearNull() {
+                return this.IsNull(this.tableViewMLvConsumed.TotalForYearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalForYearNull() {
+                this[this.tableViewMLvConsumed.TotalForYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsYearRemainingNull() {
+                return this.IsNull(this.tableViewMLvConsumed.YearRemainingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetYearRemainingNull() {
+                this[this.tableViewMLvConsumed.YearRemainingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGrandTotalNull() {
+                return this.IsNull(this.tableViewMLvConsumed.GrandTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGrandTotalNull() {
+                this[this.tableViewMLvConsumed.GrandTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGrandTotalRemainingNull() {
+                return this.IsNull(this.tableViewMLvConsumed.GrandTotalRemainingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGrandTotalRemainingNull() {
+                this[this.tableViewMLvConsumed.GrandTotalRemainingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableViewMLvConsumed.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableViewMLvConsumed.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSecIDNull() {
+                return this.IsNull(this.tableViewMLvConsumed.SecIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSecIDNull() {
+                this[this.tableViewMLvConsumed.SecIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTypeIDNull() {
+                return this.IsNull(this.tableViewMLvConsumed.TypeIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTypeIDNull() {
+                this[this.tableViewMLvConsumed.TypeIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocIDNull() {
+                return this.IsNull(this.tableViewMLvConsumed.LocIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocIDNull() {
+                this[this.tableViewMLvConsumed.LocIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsShiftIDNull() {
+                return this.IsNull(this.tableViewMLvConsumed.ShiftIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetShiftIDNull() {
+                this[this.tableViewMLvConsumed.ShiftIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDesigIDNull() {
+                return this.IsNull(this.tableViewMLvConsumed.DesigIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDesigIDNull() {
+                this[this.tableViewMLvConsumed.DesigIDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class FlexyMonthPerRow : global::System.Data.DataRow {
             
             private FlexyMonthPerDataTable tableFlexyMonthPer;
@@ -15997,6 +17614,40 @@ namespace WMS.Models {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ViewMLvConsumedRowChangeEvent : global::System.EventArgs {
+            
+            private ViewMLvConsumedRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedRowChangeEvent(ViewMLvConsumedRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewMLvConsumedRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class FlexyMonthPerRowChangeEvent : global::System.EventArgs {
             
             private FlexyMonthPerRow eventRow;
@@ -17442,6 +19093,207 @@ namespace WMS.Models.TASReportDataSetTableAdapters {
         public virtual TASReportDataSet.ViewJobCardAppDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             TASReportDataSet.ViewJobCardAppDataTable dataTable = new TASReportDataSet.ViewJobCardAppDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ViewMLvConsumedTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ViewMLvConsumedTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ViewMLvConsumed";
+            tableMapping.ColumnMappings.Add("LvDesc", "LvDesc");
+            tableMapping.ColumnMappings.Add("EmpID", "EmpID");
+            tableMapping.ColumnMappings.Add("EmpLvTypeYear", "EmpLvTypeYear");
+            tableMapping.ColumnMappings.Add("LvYear", "LvYear");
+            tableMapping.ColumnMappings.Add("JanConsumed", "JanConsumed");
+            tableMapping.ColumnMappings.Add("FebConsumed", "FebConsumed");
+            tableMapping.ColumnMappings.Add("MarchConsumed", "MarchConsumed");
+            tableMapping.ColumnMappings.Add("AprConsumed", "AprConsumed");
+            tableMapping.ColumnMappings.Add("MayConsumed", "MayConsumed");
+            tableMapping.ColumnMappings.Add("JuneConsumed", "JuneConsumed");
+            tableMapping.ColumnMappings.Add("JulyConsumed", "JulyConsumed");
+            tableMapping.ColumnMappings.Add("AugustConsumed", "AugustConsumed");
+            tableMapping.ColumnMappings.Add("SepConsumed", "SepConsumed");
+            tableMapping.ColumnMappings.Add("OctConsumed", "OctConsumed");
+            tableMapping.ColumnMappings.Add("NovConsumed", "NovConsumed");
+            tableMapping.ColumnMappings.Add("DecConsumed", "DecConsumed");
+            tableMapping.ColumnMappings.Add("TotalForYear", "TotalForYear");
+            tableMapping.ColumnMappings.Add("YearRemaining", "YearRemaining");
+            tableMapping.ColumnMappings.Add("GrandTotal", "GrandTotal");
+            tableMapping.ColumnMappings.Add("GrandTotalRemaining", "GrandTotalRemaining");
+            tableMapping.ColumnMappings.Add("DeptName", "DeptName");
+            tableMapping.ColumnMappings.Add("SectionName", "SectionName");
+            tableMapping.ColumnMappings.Add("DesignationName", "DesignationName");
+            tableMapping.ColumnMappings.Add("EmpNo", "EmpNo");
+            tableMapping.ColumnMappings.Add("EmpName", "EmpName");
+            tableMapping.ColumnMappings.Add("DeptID", "DeptID");
+            tableMapping.ColumnMappings.Add("ShiftName", "ShiftName");
+            tableMapping.ColumnMappings.Add("LocName", "LocName");
+            tableMapping.ColumnMappings.Add("TypeName", "TypeName");
+            tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("SecID", "SecID");
+            tableMapping.ColumnMappings.Add("TypeID", "TypeID");
+            tableMapping.ColumnMappings.Add("LocID", "LocID");
+            tableMapping.ColumnMappings.Add("ShiftID", "ShiftID");
+            tableMapping.ColumnMappings.Add("DesigID", "DesigID");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["TAS2013ConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT LvDesc, EmpID, EmpLvTypeYear, LvYear, JanConsumed, FebConsumed, MarchConsumed, AprConsumed, MayConsumed, JuneConsumed, JulyConsumed, AugustConsumed, SepConsumed, OctConsumed, NovConsumed, DecConsumed, TotalForYear, YearRemaining, GrandTotal, GrandTotalRemaining, DeptName, SectionName, DesignationName, EmpNo, EmpName, DeptID, ShiftName, LocName, TypeName, Status, SecID, TypeID, LocID, ShiftID, DesigID FROM dbo.ViewMLvConsumed";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(TASReportDataSet.ViewMLvConsumedDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual TASReportDataSet.ViewMLvConsumedDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            TASReportDataSet.ViewMLvConsumedDataTable dataTable = new TASReportDataSet.ViewMLvConsumedDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

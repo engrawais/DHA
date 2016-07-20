@@ -71,6 +71,7 @@
                                     <h5>Monthly</h5>
                                     <ul>
                                         <li><a href="../ReportContainer.aspx?reportname=monthly_21-20_flexy">Monthly Sheet</a></li>
+                                        <li><a href="../ReportContainer.aspx?reportname=MYLeaveSummary">Yearly Leave Summary</a></li>
                                     </ul>
                                 </li>
                                 <li>

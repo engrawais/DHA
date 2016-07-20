@@ -317,8 +317,139 @@ namespace WMS.Reports
                          LoadReport1(PathString, FilteredAttdataList, FilteredLeavesList, FilteredAttEmpList, FilteredJCList,_dateFrom + " TO " + _dateTo);
                         
                         break;
+                    
+                    case "MYLeaveSummary": DataTable data1 = qb.GetValuesfromDB("select * from ViewMLvConsumed " + query);
+                        List<ViewMLvConsumed> _ViewListLeaveYearly = data1.ToList<ViewMLvConsumed>();
+                        List<ViewMLvConsumed> _TempViewListLeaveYearly = new List<ViewMLvConsumed>();
+                        title = "Yearly Leave Summary";
+                        if (GlobalVariables.DeploymentType == false)
+                            PathString = "/Reports/RDLC/MYLeaveSummary.rdlc";
+                        else
+                            PathString = "/WMS/Reports/RDLC/MYLeaveSummary.rdlc";
+                        LoadReport(PathString, ReportsFilterImplementation(fm, _TempViewListLeaveYearly, _ViewListLeaveYearly), _dateFrom + " TO " + _dateTo);
+                        break;
                 }
             }
+        }
+
+        private void LoadReport(string PathString, List<ViewMLvConsumed> list, string p)
+        {
+            string _Header = "Yearly Leave Summary";
+            this.ReportViewer1.LocalReport.DisplayName = "Yearly Leave Summary";
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath(PathString);
+            System.Security.PermissionSet sec = new System.Security.PermissionSet(System.Security.Permissions.PermissionState.Unrestricted);
+            ReportViewer1.LocalReport.SetBasePermissionsForSandboxAppDomain(sec);
+            IEnumerable<ViewMLvConsumed> ie;
+            ie = list.AsQueryable();
+            ReportDataSource datasource1 = new ReportDataSource("DataSet1", ie);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.HyperlinkTarget = "_blank";
+            IEnumerable<Option> companyImage;
+           
+            companyImage = companyimage.AsQueryable();
+            ReportDataSource datasource2 = new ReportDataSource("DataSet2", companyImage);
+
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.EnableExternalImages = true;
+            ReportViewer1.LocalReport.DataSources.Add(datasource1);
+            ReportViewer1.LocalReport.DataSources.Add(datasource2);
+            ReportParameter rp = new ReportParameter("Header", _Header, false);
+            ReportParameter rp1 = new ReportParameter("Date", p, false);
+            this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp, rp1 });
+            ReportViewer1.LocalReport.Refresh();
+        }
+
+        private List<ViewMLvConsumed> ReportsFilterImplementation(FiltersModel fm, List<ViewMLvConsumed> _TempViewListLeave, List<ViewMLvConsumed> _ViewListLeave)
+        {
+            //for location
+            if (fm.LocationFilter.Count > 0)
+            {
+                foreach (var loc in fm.LocationFilter)
+                {
+                    short _locID = Convert.ToInt16(loc.ID);
+                    _TempViewListLeave.AddRange(_ViewListLeave.Where(aa => aa.LocID == _locID).ToList());
+                }
+                _ViewListLeave = _TempViewListLeave.ToList();
+            }
+            else
+                _TempViewListLeave = _ViewListLeave.ToList();
+            _TempViewListLeave.Clear();
+
+            //for shifts
+            if (fm.ShiftFilter.Count > 0)
+            {
+                foreach (var shift in fm.ShiftFilter)
+                {
+                    short _shiftID = Convert.ToInt16(shift.ID);
+                    _TempViewListLeave.AddRange(_ViewListLeave.Where(aa => aa.ShiftID == _shiftID).ToList());
+                }
+                _ViewListLeave = _TempViewListLeave.ToList();
+            }
+            else
+                _TempViewListLeave = _ViewListLeave.ToList();
+
+
+            _TempViewListLeave.Clear();
+
+            //for type
+            if (fm.TypeFilter.Count > 0)
+            {
+                foreach (var type in fm.TypeFilter)
+                {
+                    short _typeID = Convert.ToInt16(type.ID);
+                    _TempViewListLeave.AddRange(_ViewListLeave.Where(aa => aa.TypeID == _typeID).ToList());
+                }
+                _ViewListLeave = _TempViewListLeave.ToList();
+            }
+            else
+                _TempViewListLeave = _ViewListLeave.ToList();
+            _TempViewListLeave.Clear();
+
+            //for department
+            if (fm.DepartmentFilter.Count > 0)
+            {
+                foreach (var dept in fm.DepartmentFilter)
+                {
+                    short _deptID = Convert.ToInt16(dept.ID);
+                    _TempViewListLeave.AddRange(_ViewListLeave.Where(aa => aa.DeptID == _deptID).ToList());
+                }
+                _ViewListLeave = _TempViewListLeave.ToList();
+            }
+            else
+                _TempViewListLeave = _ViewListLeave.ToList();
+            _TempViewListLeave.Clear();
+
+            //for sections
+            if (fm.SectionFilter.Count > 0)
+            {
+                foreach (var sec in fm.SectionFilter)
+                {
+                    short _secID = Convert.ToInt16(sec.ID);
+                    _TempViewListLeave.AddRange(_ViewListLeave.Where(aa => aa.SecID == _secID).ToList());
+                }
+                _ViewListLeave = _TempViewListLeave.ToList();
+            }
+            else
+                _TempViewListLeave = _ViewListLeave.ToList();
+            _TempViewListLeave.Clear();
+
+            //Employee
+            if (fm.EmployeeFilter.Count > 0)
+            {
+                foreach (var emp in fm.EmployeeFilter)
+                {
+                    int _empID = Convert.ToInt32(emp.ID);
+                    _TempViewListLeave.AddRange(_ViewListLeave.Where(aa => aa.EmpID == _empID).ToList());
+                }
+                _ViewListLeave = _TempViewListLeave.ToList();
+            }
+            else
+                _TempViewListLeave = _ViewListLeave.ToList();
+            _TempViewListLeave.Clear();
+
+
+            return _ViewListLeave;
         }
 
         private List<ViewJobCardApp> ReportsFilterImplementation4(FiltersModel fm, List<ViewJobCardApp> _TempViewListJC, List<ViewJobCardApp> _ViewListJC)
@@ -734,131 +865,7 @@ namespace WMS.Reports
             this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp, rp1 });
             ReportViewer1.LocalReport.Refresh();
         }
-        //ParadList Sheet
-        //private List<ViewAttData> ReportsFilterImplementation1(FiltersModel fm, List<ViewAttData> _TempViewListparadeSheet, List<ViewAttData> _ViewListParadeSheet, List<ViewLvApplication> _ViewListleavelist, List<ViewJobCardApp> _ViewListjobcardlist, List<EmpView> _ViewListEmpList)
-        //{
-        //    //for location
-        //    if (fm.LocationFilter.Count > 0)
-        //    {
-        //        foreach (var loc in fm.LocationFilter)
-        //        {
-        //            short _locID = Convert.ToInt16(loc.ID);
-        //            _TempViewListparadeSheet.AddRange(_ViewListParadeSheet.Where(aa => aa.LocID == _locID).ToList());
-        //        }
-        //        _ViewListParadeSheet = _TempViewListparadeSheet.ToList();
-        //    }
-        //    else
-        //        _TempViewListparadeSheet = _ViewListParadeSheet.ToList();
-        //    _TempViewListparadeSheet.Clear();
-
-        //    //for shifts
-        //    if (fm.ShiftFilter.Count > 0)
-        //    {
-        //        foreach (var shift in fm.ShiftFilter)
-        //        {
-        //            short _shiftID = Convert.ToInt16(shift.ID);
-        //            _TempViewListparadeSheet.AddRange(_ViewListParadeSheet.Where(aa => aa.ShiftID == _shiftID).ToList());
-        //        }
-        //        _ViewListParadeSheet = _TempViewListparadeSheet.ToList();
-        //    }
-        //    else
-        //        _TempViewListparadeSheet = _ViewListParadeSheet.ToList();
-
-
-        //    _TempViewListparadeSheet.Clear();
-
-        //    //for type
-        //    if (fm.TypeFilter.Count > 0)
-        //    {
-        //        foreach (var type in fm.TypeFilter)
-        //        {
-        //            short _typeID = Convert.ToInt16(type.ID);
-        //            _TempViewListparadeSheet.AddRange(_ViewListParadeSheet.Where(aa => aa.TypeID == _typeID).ToList());
-        //        }
-        //        _ViewListParadeSheet = _TempViewListparadeSheet.ToList();
-        //    }
-        //    else
-        //        _TempViewListparadeSheet = _ViewListParadeSheet.ToList();
-        //    _TempViewListparadeSheet.Clear();
-
-        //    //for crews
-        //    //if (fm.CrewFilter.Count > 0)
-        //    //{
-        //    //    foreach (var cre in fm.CrewFilter)
-        //    //    {
-        //    //        short _crewID = Convert.ToInt16(cre.ID);
-        //    //        _TempViewList.AddRange(_ViewList.Where(aa => aa.CrewID == _crewID).ToList());
-        //    //    }
-        //    //    _ViewList = _TempViewList.ToList();
-        //    //}
-        //    //else
-        //    //    _TempViewList = _ViewList.ToList();
-        //    //_TempViewList.Clear();
-
-
-
-
-
-        //    //for division
-        //    //if (fm.DivisionFilter.Count > 0)
-        //    //{
-        //    //    foreach (var div in fm.DivisionFilter)
-        //    //    {
-        //    //        short _divID = Convert.ToInt16(div.ID);
-        //    //        _TempViewList.AddRange(_ViewList.Where(aa => aa.DivID == _divID).ToList());
-        //    //    }
-        //    //    _ViewList = _TempViewList.ToList();
-        //    //}
-        //    //else
-        //    //    _TempViewList = _ViewList.ToList();
-        //    //_TempViewList.Clear();
-
-        //    //for department
-        //    if (fm.DepartmentFilter.Count > 0)
-        //    {
-        //        foreach (var dept in fm.DepartmentFilter)
-        //        {
-        //            short _deptID = Convert.ToInt16(dept.ID);
-        //            _TempViewListparadeSheet.AddRange(_ViewListParadeSheet.Where(aa => aa.DeptID == _deptID).ToList());
-        //        }
-        //        _ViewListParadeSheet = _TempViewListparadeSheet.ToList();
-        //    }
-        //    else
-        //        _TempViewListparadeSheet = _ViewListParadeSheet.ToList();
-        //    _TempViewListparadeSheet.Clear();
-
-        //    //for sections
-        //    if (fm.SectionFilter.Count > 0)
-        //    {
-        //        foreach (var sec in fm.SectionFilter)
-        //        {
-        //            short _secID = Convert.ToInt16(sec.ID);
-        //            _TempViewListparadeSheet.AddRange(_ViewListParadeSheet.Where(aa => aa.SecID == _secID).ToList());
-        //        }
-        //        _ViewListParadeSheet = _TempViewListparadeSheet.ToList();
-        //    }
-        //    else
-        //        _TempViewListparadeSheet = _ViewListParadeSheet.ToList();
-        //    _TempViewListparadeSheet.Clear();
-
-        //    //Employee
-        //    if (fm.EmployeeFilter.Count > 0)
-        //    {
-        //        foreach (var emp in fm.EmployeeFilter)
-        //        {
-        //            int _empID = Convert.ToInt32(emp.ID);
-        //            _TempViewListparadeSheet.AddRange(_ViewListParadeSheet.Where(aa => aa.EmpID == _empID).ToList());
-        //        }
-        //        _ViewListParadeSheet = _TempViewListparadeSheet.ToList();
-        //    }
-        //    else
-        //        _TempViewListparadeSheet = _ViewListParadeSheet.ToList();
-        //    _TempViewListparadeSheet.Clear();
-
-
-        //    return _ViewListParadeSheet;
-        //}
-        
+       
         private void CreateEmpSummaryDataTable()
         {
             EmpSummaryDT.Columns.Add("EmpNo", typeof(string));

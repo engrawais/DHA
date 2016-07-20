@@ -435,7 +435,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Emp No</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -482,7 +482,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Type Name</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1074,14 +1074,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Section">
+                    <Textbox Name="SectionName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Section.Value</Value>
+                              <Value>=Fields!SectionName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1091,7 +1091,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Section</rd:DefaultName>
+                      <rd:DefaultName>SectionName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1119,14 +1119,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="EmpType">
+                    <Textbox Name="TypeName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!EmpType.Value</Value>
+                              <Value>=Fields!TypeName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1138,7 +1138,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>EmpType</rd:DefaultName>
+                      <rd:DefaultName>TypeName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1166,14 +1166,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TotalAL">
+                    <Textbox Name="EmpNo1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TotalAL.Value</Value>
+                              <Value>=Fields!EmpNo.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1185,7 +1185,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TotalAL</rd:DefaultName>
+                      <rd:DefaultName>EmpNo1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1213,14 +1213,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TotalCL">
+                    <Textbox Name="EmpName1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TotalCL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1232,7 +1232,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TotalCL</rd:DefaultName>
+                      <rd:DefaultName>EmpName1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1260,14 +1260,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TotalSL">
+                    <Textbox Name="EmpName2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TotalSL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1279,7 +1279,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TotalSL</rd:DefaultName>
+                      <rd:DefaultName>EmpName2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1307,14 +1307,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ConsumedAL">
+                    <Textbox Name="EmpName3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ConsumedAL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1326,7 +1326,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ConsumedAL</rd:DefaultName>
+                      <rd:DefaultName>EmpName3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1354,14 +1354,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ConsumedCL">
+                    <Textbox Name="EmpName4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ConsumedCL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1373,7 +1373,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ConsumedCL</rd:DefaultName>
+                      <rd:DefaultName>EmpName4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1401,14 +1401,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ConsumedSL">
+                    <Textbox Name="EmpName5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ConsumedSL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1420,7 +1420,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ConsumedSL</rd:DefaultName>
+                      <rd:DefaultName>EmpName5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1448,14 +1448,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="BalanceAL">
+                    <Textbox Name="EmpName6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!BalanceAL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1467,7 +1467,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>BalanceAL</rd:DefaultName>
+                      <rd:DefaultName>EmpName6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1495,14 +1495,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="BalanceCL">
+                    <Textbox Name="EmpName7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!BalanceCL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1514,7 +1514,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>BalanceCL</rd:DefaultName>
+                      <rd:DefaultName>EmpName7</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1542,14 +1542,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="BalanceSL">
+                    <Textbox Name="EmpName8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!BalanceSL.Value</Value>
+                              <Value>=Fields!EmpName.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1561,7 +1561,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>BalanceSL</rd:DefaultName>
+                      <rd:DefaultName>EmpName8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1585,6 +1585,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1857,6 +1858,98 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="LvDesc">
+          <DataField>LvDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmpID">
+          <DataField>EmpID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EmpLvTypeYear">
+          <DataField>EmpLvTypeYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LvYear">
+          <DataField>LvYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="JanConsumed">
+          <DataField>JanConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FebConsumed">
+          <DataField>FebConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MarchConsumed">
+          <DataField>MarchConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AprConsumed">
+          <DataField>AprConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MayConsumed">
+          <DataField>MayConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="JuneConsumed">
+          <DataField>JuneConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="JulyConsumed">
+          <DataField>JulyConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AugustConsumed">
+          <DataField>AugustConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="SepConsumed">
+          <DataField>SepConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OctConsumed">
+          <DataField>OctConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NovConsumed">
+          <DataField>NovConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="DecConsumed">
+          <DataField>DecConsumed</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalForYear">
+          <DataField>TotalForYear</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="YearRemaining">
+          <DataField>YearRemaining</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="GrandTotal">
+          <DataField>GrandTotal</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="GrandTotalRemaining">
+          <DataField>GrandTotalRemaining</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="DeptName">
+          <DataField>DeptName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SectionName">
+          <DataField>SectionName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DesignationName">
+          <DataField>DesignationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="EmpNo">
           <DataField>EmpNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1865,86 +1958,54 @@
           <DataField>EmpName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Designation">
-          <DataField>Designation</DataField>
+        <Field Name="DeptID">
+          <DataField>DeptID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ShiftName">
+          <DataField>ShiftName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Section">
-          <DataField>Section</DataField>
+        <Field Name="LocName">
+          <DataField>LocName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Department">
-          <DataField>Department</DataField>
+        <Field Name="TypeName">
+          <DataField>TypeName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="EmpType">
-          <DataField>EmpType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="Category">
-          <DataField>Category</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="SecID">
+          <DataField>SecID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="Location">
-          <DataField>Location</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="TypeID">
+          <DataField>TypeID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
-        <Field Name="Company">
-          <DataField>Company</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="LocID">
+          <DataField>LocID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="TotalCL">
-          <DataField>TotalCL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+        <Field Name="ShiftID">
+          <DataField>ShiftID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
-        <Field Name="TotalSL">
-          <DataField>TotalSL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="TotalAL">
-          <DataField>TotalAL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ConsumedCL">
-          <DataField>ConsumedCL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ConsumedSL">
-          <DataField>ConsumedSL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="ConsumedAL">
-          <DataField>ConsumedAL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="BalanceCL">
-          <DataField>BalanceCL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="BalanceSL">
-          <DataField>BalanceSL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="BalanceAL">
-          <DataField>BalanceAL</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="Remarks">
-          <DataField>Remarks</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Month">
-          <DataField>Month</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="DesigID">
+          <DataField>DesigID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>TASReportDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Projects\CNS\Working Projects\WMS General\WMS\WMS\Models\TASReportDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>LvSummaryMonth</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
+        <rd:SchemaPath>E:\Projects\DHA\Ahsin Deployment\DHA\WMS-DHA\WMS\Models\TASReportDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>ViewMLvConsumed</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ViewMLvConsumedTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
